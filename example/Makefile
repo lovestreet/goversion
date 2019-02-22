@@ -24,16 +24,16 @@ HOST_NAME := `hostname`
 
 build: 
 	# build the app
-	go build -ldflags                           \
-	"                                           \
-	-X 'version.BuildVersion=${BUILD_VERSION}'  \
-	-X 'version.BuildTime=${BUILD_TIME}'        \
-	-X 'version.BuildName=${BUILD_NAME}'        \
-	-X 'version.GitCommitID=${GIT_COMMIT}'      \
-	-X 'version.GitBranch=${GIT_BRANCH}'        \
-	-X 'version.GolangVersion=${GOLANG_VERSION}'\
-	-X 'version.HostName=${HOST_NAME}'          \
-	"                                           \
+	go build -ldflags                                                   \
+	"                                                                   \
+	-X 'github.com/lovestreet/goversion.BuildVersion=${BUILD_VERSION}'  \
+	-X 'github.com/lovestreet/goversion.BuildTime=${BUILD_TIME}'        \
+	-X 'github.com/lovestreet/goversion.BuildName=${BUILD_NAME}'        \
+	-X 'github.com/lovestreet/goversion.GitCommitID=${GIT_COMMIT}'      \
+	-X 'github.com/lovestreet/goversion.GitBranch=${GIT_BRANCH}'        \
+	-X 'github.com/lovestreet/goversion.GolangVersion=${GOLANG_VERSION}'\
+	-X 'github.com/lovestreet/goversion.HostName=${HOST_NAME}'          \
+	"                                                                   \
 	 -o ${BUILD_NAME}
 
 	# output the version
