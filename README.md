@@ -31,7 +31,7 @@ func main() {
 
 	//[[ 代码集成
 	//show version and exist, if have -v or -version
-	goversion.ShowAndExist()
+	goversion.ShowAndExit()
 	//]]
 
 	//do your code
