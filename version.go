@@ -20,13 +20,13 @@ var (
 var showV = flag.Bool("v", false, "show the app version")
 var showVersion = flag.Bool("version", false, "show the app version")
 
-//ShowAndExist 显示并退出程序
-func ShowAndExist() {
-	showVersionAndExist()
+//ShowAndExit 显示并退出程序
+func ShowAndExit() {
+	showVersionAndExit()
 }
 
 //显示版本并退出
-func showVersionAndExist() {
+func showVersionAndExit() {
 	if *showV || *showVersion {
 		fmt.Printf("************************************************************\n")
 		fmt.Printf("* build name:      %s\n", BuildName)
