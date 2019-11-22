@@ -15,6 +15,8 @@ var (
 	GitBranch     string // git branch
 	GolangVersion string // golang的版本
 	HostName      string // 编译机器
+	Company       string // 公司名称
+	Project       string // 项目名称
 )
 
 var showV = flag.Bool("v", false, "show the app version")
@@ -36,6 +38,8 @@ func showVersionAndExit() {
 		fmt.Printf("* git branch:      %s\n", GitBranch)
 		fmt.Printf("* golang version:  %s\n", GolangVersion)
 		fmt.Printf("* host name:       %s\n", HostName)
+		fmt.Printf("* company:         %s\n", Company)
+		fmt.Printf("* project:         %s\n", Project)
 		fmt.Printf("************************************************************\n")
 
 		//exit the app

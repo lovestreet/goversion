@@ -12,7 +12,8 @@
 # GIT_BRANCH :      执行编译时的 git 分支，自动收集
 # GOLANG_VERSION :  golang 的版本信息，自动收集
 # HOST_NAME :       当前编译主机的名称，自动收集
-# 
+# COMPANY :         程序隶属的公司，手动配置 
+# PROJECT :         项目名称，手动配置
 #******************************************************************************
 BUILD_NAME := showVersion
 BUILD_VERSION := 1.1.1 
@@ -21,6 +22,8 @@ GIT_COMMIT := `git rev-parse HEAD`
 GIT_BRANCH := `git branch | grep \* | cut -d ' ' -f2` 
 GOLANG_VERSION := `go version` 
 HOST_NAME := `hostname` 
+COMPANY := company name
+PROJECT := project name 
 
 build: 
 	# build the app
@@ -33,6 +36,8 @@ build:
 	-X 'github.com/lovestreet/goversion.GitBranch=${GIT_BRANCH}'        \
 	-X 'github.com/lovestreet/goversion.GolangVersion=${GOLANG_VERSION}'\
 	-X 'github.com/lovestreet/goversion.HostName=${HOST_NAME}'          \
+	-X 'github.com/lovestreet/goversion.Company=${COMPANY}'             \
+	-X 'github.com/lovestreet/goversion.Project=${PROJECT}'             \
 	"                                                                   \
 	 -o ${BUILD_NAME}
 
